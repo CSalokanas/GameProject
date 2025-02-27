@@ -30,7 +30,7 @@ while running:
          x += speed
 
         if event.type == pygame.KEYUP and event.key == pygame.K_d:
-            x -= speed
+         x -= speed
     pygame.display.update()
 
     clock.tick(60)
