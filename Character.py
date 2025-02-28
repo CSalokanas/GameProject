@@ -1,12 +1,11 @@
 import pygame
-character_image = "./images/character.png"
 class Aidn5(pygame.sprite.Sprite):
 
     def __init__(self, x):
-        self.image = pygame.transform.scale2x(pygame.image.load(character_image)).convert_alpha()
-        self.x = 512
-        self.player_pos = (self.x, 780)
-        self.character = pygame.image.load(character_image)
+        self.pressed_a = False
+        self.pressed_d = False
+        self.x1 = x
+        self.player_pos = (self.x1, 780)
         self.speed = 5
         super().__init__()
 
@@ -15,10 +14,15 @@ class Aidn5(pygame.sprite.Sprite):
 
 
     def move_left(self):
-        self.x += self.speed
-        pygame.display.update()
+        self.x1 -= self.speed
 
 
     def move_right(self):
-        self.x -= self.speed
-        pygame.display.update()
+        self.x1 += self.speed
+
+    def update(self, screen):
+        self.player_pos = (self.x1, 780)
+        pygame.draw.circle(screen, "red", self.player_pos, 40)
+
+
+
