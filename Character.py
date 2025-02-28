@@ -6,7 +6,7 @@ class Aidn5(pygame.sprite.Sprite):
         self.pressed_d = False
         self.x1 = x
         self.player_pos = (self.x1, 780)
-        self.speed = 5
+        self.speed = 10
         super().__init__()
 
     def start(self, screen):
@@ -20,7 +20,7 @@ class Aidn5(pygame.sprite.Sprite):
     def move_right(self):
         self.x1 += self.speed
 
-    def update(self, screen):
+    def character_update(self, screen):
         self.player_pos = (self.x1, 780)
         pygame.draw.circle(screen, "red", self.player_pos, 40)
 
