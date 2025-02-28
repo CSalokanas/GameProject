@@ -24,15 +24,15 @@ while running:
         pressed_a = False
     if not keys[pygame.K_d]:
         pressed_d = False
-    if keys[pygame.K_a] and pressed_a == False:
+    if keys[pygame.K_a] and pressed_a == False and aidn5.x1 > 40:
         aidn5.move_left()
         pressed_a = True
-        aidn5.update(screen=screen)
+        aidn5.character_update(screen=screen)
 
-    if keys[pygame.K_d] and pressed_d == False:
+    if keys[pygame.K_d] and pressed_d == False and aidn5.x1 < 985:
         aidn5.move_right()
         pressed_d = True
-        aidn5.update(screen=screen)
+        aidn5.character_update(screen=screen)
 
     pygame.display.update()
     clock.tick(60)
