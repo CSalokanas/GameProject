@@ -10,10 +10,10 @@ class Difficulty:
         self.hard_button = None
         self.random_button = None
         self.difficulty_map = {
-            "Easy": 10,
-            "Medium": 20,
-            "Hard": 30,
-            "Random": randint(10, 30),
+            "Easy": (10,5),
+            "Medium": (20,7),
+            "Hard": (30,10),
+            "Random": (randint(10, 30), randint(5, 10))
         }
 
     def difficulti(self, screen):
